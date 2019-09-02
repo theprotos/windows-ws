@@ -1,0 +1,30 @@
+<LayoutModificationTemplate Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
+  <DefaultLayoutOverride>
+    <StartLayoutCollection>
+      <defaultlayout:StartLayout GroupCellWidth="6" xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout">
+        <start:Group Name="Development" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout">
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationID="{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\JetBrains\IntelliJ IDEA Community Edition 15.0\bin\idea.exe" />
+          <start:DesktopApplicationTile Size="1x1" Column="1" Row="0" DesktopApplicationID="{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\JetBrains\PyCharm Community Edition 5.0.3\bin\pycharm.exe" />
+          <start:DesktopApplicationTile Size="1x1" Column="3" Row="0" DesktopApplicationID="{6D809377-6AF0-444B-8957-A3773F02200E}\NetBeans 8.0.2\bin\netbeans64.exe" />
+          <start:DesktopApplicationTile Size="1x1" Column="5" Row="0" DesktopApplicationID="{6D809377-6AF0-444B-8957-A3773F02200E}\Sublime Text 3\sublime_text.exe" />
+        </start:Group>
+        <start:Group Name="Internet" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout">
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationID="E7CF176E110C211B" />
+          <start:DesktopApplicationTile Size="1x1" Column="2" Row="0" DesktopApplicationID="Chrome" />
+        </start:Group>
+        <start:Group Name="Office" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout">
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationID="Microsoft.Office.WINWORD.EXE.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="5" Row="0" DesktopApplicationID="Microsoft.Office.OUTLOOK.EXE.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="2" Row="0" DesktopApplicationID="Microsoft.Office.WINPROJ.EXE.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="1" Row="0" DesktopApplicationID="Microsoft.Office.EXCEL.EXE.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="3" Row="0" DesktopApplicationID="Microsoft.Office.VISIO.EXE.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="4" Row="0" DesktopApplicationID="Microsoft.Office.POWERPNT.EXE.15" />
+        </start:Group>
+        <start:Group Name="" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout">
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationID="{6D809377-6AF0-444B-8957-A3773F02200E}\VideoLAN\VLC\vlc.exe" />
+          <start:DesktopApplicationTile Size="1x1" Column="1" Row="0" DesktopApplicationID="{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\AIMP3\AIMP.exe" />
+        </start:Group>
+      </defaultlayout:StartLayout>
+    </StartLayoutCollection>
+  </DefaultLayoutOverride>
+</LayoutModificationTemplate>

@@ -1,0 +1,90 @@
+@echo off
+if [%1] EQU [vm] (
+    title VM Setup. Power
+    goto main
+)
+if [%1] EQU [laptop] (
+    title Laptop Setup. Power
+    goto main
+)
+if [%1] EQU [physical] (
+      title Physical Machine Setup. Power
+      goto main
+) else (
+     title Wrong parameter. Power
+     echo Closing in 15 seconds..
+     ping 127.0.0.1 -w 1000 -n 15 > nul 2>&1
+     exit
+)
+:main
+@echo %stringStyle% POWER Settings %stringStyle%
+if [%1] EQU [vm] (
+    @echo %stringStyle% POWER Settings High performance %stringStyle%
+    powercfg -SETACTIVE SCHEME_MIN
+    @echo %stringStyle% POWER Settings Hibernate off %stringStyle%
+    powercfg /hibernate off
+)
+if [%1] EQU [laptop] (
+    @echo %stringStyle% POWER Settings {Balanced} %stringStyle%
+    powercfg -SETACTIVE SCHEME_BALANCED
+    @echo %stringStyle% POWER Settings {Hibernate}{on} %stringStyle%
+    powercfg /hibernate on
+    @reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power" /v  HibernateEnabled /T REG_DWORD /F /D 1
+    @echo %stringStyle% POWER Settings {Balanced}{Sleep}{Sleep after}{0/0} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_BALANCED SUB_SLEEP STANDBYIDLE 0
+    powercfg -setACvalueindex SCHEME_BALANCED SUB_SLEEP STANDBYIDLE 0
+    @echo %stringStyle% POWER Settings {Balanced}{Sleep}{Allow hybrid sleep}{off/off} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_BALANCED SUB_SLEEP HYBRIDSLEEP 000
+    powercfg -setACvalueindex SCHEME_BALANCED SUB_SLEEP HYBRIDSLEEP 000
+    @echo %stringStyle% POWER Settings {Balanced}{Sleep}{Hibernate after}{3000/5000} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_BALANCED SUB_SLEEP HIBERNATEIDLE 3000
+    powercfg -setACvalueindex SCHEME_BALANCED SUB_SLEEP HIBERNATEIDLE 5000
+    @echo %stringStyle% POWER Settings {Balanced}{Power buttons and lid}{Lid close action}{Hibernate/Nothing} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_BALANCED SUB_BUTTONS LIDACTION 002
+    powercfg -setACvalueindex SCHEME_BALANCED SUB_BUTTONS LIDACTION 000
+    @echo %stringStyle% POWER Settings {Balanced}{Power buttons and lid}{Power button action}{Hibernate/Hibernate} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_BALANCED SUB_BUTTONS PBUTTONACTION 002
+    powercfg -setACvalueindex SCHEME_BALANCED SUB_BUTTONS PBUTTONACTION 002
+    @echo %stringStyle% POWER Settings {Balanced}{Power buttons and lid}{Sleep button action}{Hibernate/Hibernate} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_BALANCED SUB_BUTTONS SBUTTONACTION 002
+    powercfg -setACvalueindex SCHEME_BALANCED SUB_BUTTONS SBUTTONACTION 002
+    @echo %stringStyle% POWER Settings {Balanced}{Display}{Turn off display after}{600/900} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_BALANCED SUB_VIDEO VIDEOIDLE 600
+    powercfg -setACvalueindex SCHEME_BALANCED SUB_VIDEO VIDEOIDLE 900
+    @echo %stringStyle% POWER Settings {Balanced}{Display}{Display brightness}{70/70} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_BALANCED SUB_VIDEO aded5e82-b909-4619-9949-f5d71dac0bcb 80
+    powercfg -setACvalueindex SCHEME_BALANCED SUB_VIDEO aded5e82-b909-4619-9949-f5d71dac0bcb 80
+    @echo %stringStyle% POWER Settings {Balanced}{Display}{Dimmed display brightness}{70/70} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_BALANCED SUB_VIDEO f1fbfde2-a960-4165-9f88-50667911ce96 75
+    powercfg -setACvalueindex SCHEME_BALANCED SUB_VIDEO f1fbfde2-a960-4165-9f88-50667911ce96 75
+    @echo %stringStyle% POWER Settings {Balanced}{Display}{Enable adaptive brightness}{off/off} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_BALANCED SUB_VIDEO ADAPTBRIGHT 0
+    powercfg -setACvalueindex SCHEME_BALANCED SUB_VIDEO ADAPTBRIGHT 0
+
+    @reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SessionManager\Power" /v  AwayModeEnabled /T REG_DWORD /F /D 1
+    @reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v  AwayModeEnabled /T REG_DWORD /F /D 1
+)
+if [%1] EQU [physical] (
+    @echo %stringStyle% POWER Settings {High performance} %stringStyle%
+    powercfg -SETACTIVE SCHEME_MIN
+    @echo %stringStyle% POWER Settings {Hibernate}{on} %stringStyle%
+    powercfg /hibernate on
+    @echo %stringStyle% POWER Settings {High performance}{Sleep}{Sleep after}{0/0} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_MIN SUB_SLEEP STANDBYIDLE 0
+    powercfg -setACvalueindex SCHEME_MIN SUB_SLEEP STANDBYIDLE 0
+    @echo %stringStyle% POWER Settings {High performance}{Sleep}{Allow hybrid sleep}{off/off} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_MIN SUB_SLEEP HYBRIDSLEEP 000
+    powercfg -setACvalueindex SCHEME_MIN SUB_SLEEP HYBRIDSLEEP 000
+    @echo %stringStyle% POWER Settings {High performance}{Display}{Turn off display after}{600/900} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_MIN SUB_VIDEO VIDEOIDLE 600
+    powercfg -setACvalueindex SCHEME_MIN SUB_VIDEO VIDEOIDLE 900
+    @echo %stringStyle% POWER Settings {High performance}{Display}{Enable adaptive brightness}{off/off} %stringStyle%
+    powercfg -setDCvalueindex SCHEME_MIN SUB_VIDEO ADAPTBRIGHT 0
+    powercfg -setACvalueindex SCHEME_MIN SUB_VIDEO ADAPTBRIGHT 0
+)
+@echo off
+echo.
+echo.
+echo Closing in 5 seconds..
+ping 127.0.0.1 -w 1000 -n 5 > nul 2>&1
+exit

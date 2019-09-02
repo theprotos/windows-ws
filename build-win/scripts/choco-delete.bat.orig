@@ -1,0 +1,5 @@
+rd /S /Q c:\ProgramData\chocolatey\
+
+echo Closing in 15 seconds..
+ping 127.0.0.1 -w 1000 -n 15 > nul 2>&1
+exit

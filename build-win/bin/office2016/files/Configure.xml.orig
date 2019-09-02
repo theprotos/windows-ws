@@ -1,0 +1,28 @@
+<Configuration>
+<Add OfficeClientEdition="32">
+    <Product ID="ProplusRetail">
+      <Language ID="en-US" />
+      <Language ID="ru-RU" />
+      <Language ID="uk-UA" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="OneNote" />
+    </Product>
+    <Product ID="ProjectProRetail">
+      <Language ID="en-US" />
+      <Language ID="ru-RU" />
+      <Language ID="uk-UA" />
+    </Product>
+    <Product ID="VisioProRetail">
+      <Language ID="en-US" />
+      <Language ID="ru-RU" />
+      <Language ID="uk-UA" />
+    </Product>
+</Add>
+<Display Level="Full" AcceptEULA="TRUE" />
+</Configuration>
+<!--  OInstallSetting Branch=1  -->
+<!--  OInstallSetting Office=0  -->
+<!--  OInstallSetting Arch=2  -->
+<!--  OInstallSetting Lang=1  -->

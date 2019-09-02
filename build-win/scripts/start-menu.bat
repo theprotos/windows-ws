@@ -1,0 +1,45 @@
+@echo off
+if [%1] EQU [vm] (
+    title VM Post Config. Start Menu
+    goto main
+)
+if [%1] EQU [laptop] (
+    title Laptop Post Config. Start Menu
+    goto main
+)
+if [%1] EQU [physical] (
+      title Physical Machine Post Config. Start Menu
+      goto main
+)
+if [%1] EQU [test] (
+      title TESTING. Start Menu
+      goto main
+) else (
+     title Wrong parameter. Applications
+     echo Closing in 15 seconds..
+     ping 127.0.0.1 -w 1000 -n 15 > nul 2>&1
+     exit
+)
+:main
+set layoutFile=%2
+xcopy /y /c %~dp0..\%layoutFile% %LOCALAPPDATA%\Microsoft\Windows\Shell
+xcopy /y /c %~dp0..\%layoutFile% C:\Users\Default\AppData\Local\Microsoft\Windows\Shell
+@echo off
+::Export-StartLayout -Path myLayout.xml
+::Import-StartLayout -LayoutPath "Layout.bin" -MountPath "E:\MountedImage\"
+::Import-StartLayout -LayoutPath my.bin -MountPath $env:SystemDrive\
+::powershell `Import-StartLayout -LayoutPath "myLayout.xml" -MountPath "%~dp0"`
+powershell.exe -executionpolicy bypass import-startLayout -layoutpath %~dp0..\%layoutFile% -mountpath %systemdrive%
+powershell.exe New-Item -Path 'Registry::HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows' -Name Explorer
+powershell.exe Set-ItemProperty -Path 'registry::HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer' -Name StartLayoutFile -Value "%~dp0%..\%layoutFile%"
+::powershell.exe Set-ItemProperty -Path 'registry::HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer' -Name LockedStartLayout -Value 0
+powershell.exe Set-ItemProperty -Path 'registry::HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer' -Name LockedStartLayout -Value 1
+powershell.exe New-Item -Path 'Registry::HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows' -Name Explorer
+powershell.exe Set-ItemProperty -Path 'registry::HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Explorer' -Name StartLayoutFile -Value "%~dp0%..\%layoutFile%"
+::powershell.exe Set-ItemProperty -Path 'registry::HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Explorer' -Name LockedStartLayout -Value 0
+powershell.exe Set-ItemProperty -Path 'registry::HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Explorer' -Name LockedStartLayout -Value 1
+echo.
+echo.
+echo Closing in 5 seconds..
+ping 127.0.0.1 -w 1000 -n 5 > nul 2>&1
+exit

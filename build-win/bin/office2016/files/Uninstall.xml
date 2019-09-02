@@ -1,0 +1,4 @@
+<!--suppress ALL -->
+<Configuration>
+	<Remove All="TRUE" />
+</Configuration>

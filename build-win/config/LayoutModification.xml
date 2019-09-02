@@ -1,0 +1,41 @@
+<LayoutModificationTemplate Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
+  <DefaultLayoutOverride>
+    <StartLayoutCollection>
+      <defaultlayout:StartLayout xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" GroupCellWidth="6">
+        <start:Group xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Name="Development">
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationID="{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\JetBrains\IntelliJ IDEA Community Edition 15.0.3\bin\idea.exe" />
+          <start:DesktopApplicationTile Size="1x1" Column="1" Row="0" DesktopApplicationID="{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\JetBrains\PyCharm Community Edition 5.0.3\bin\pycharm.exe" />
+          <start:DesktopApplicationTile Size="1x1" Column="2" Row="0" DesktopApplicationID="{6D809377-6AF0-444B-8957-A3773F02200E}\Eclipse Foundation\4.5.1\eclipse\eclipse.exe" />
+          <start:DesktopApplicationTile Size="1x1" Column="3" Row="0" DesktopApplicationID="{6D809377-6AF0-444B-8957-A3773F02200E}\NetBeans 8.0.2\bin\netbeans64.exe" />
+          <start:DesktopApplicationTile Size="1x1" Column="4" Row="0" DesktopApplicationID="VisualStudio.14.0" />
+          <start:DesktopApplicationTile Size="1x1" Column="5" Row="1" DesktopApplicationID="{6D809377-6AF0-444B-8957-A3773F02200E}\Sublime Text 3\sublime_text.exe" />
+          <start:DesktopApplicationTile Size="1x1" Column="5" Row="0" DesktopApplicationID="C:\totalcmd\TOTALCMD64.EXE" />
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="1" DesktopApplicationID="com.squirrel.atom.atom" />
+          <start:DesktopApplicationTile Size="1x1" Column="1" Row="1" DesktopApplicationID="{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\LINQPad4\LINQPad.exe" />
+        </start:Group>
+        <start:Group xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Name="Internet">
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationID="E7CF176E110C211B" />
+          <start:DesktopApplicationTile Size="1x1" Column="1" Row="0" DesktopApplicationID="OperaSoftware.OperaWebBrowser.1450558909" />
+          <start:DesktopApplicationTile Size="1x1" Column="2" Row="0" DesktopApplicationID="Chrome" />
+        </start:Group>
+        <start:Group xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Name="Office">
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationID="Microsoft.Office.WINWORD.EXE.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="5" Row="0" DesktopApplicationID="Microsoft.Office.OUTLOOK.EXE.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="2" Row="0" DesktopApplicationID="Microsoft.Office.WINPROJ.EXE.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="1" Row="0" DesktopApplicationID="Microsoft.Office.EXCEL.EXE.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="3" Row="0" DesktopApplicationID="Microsoft.Office.VISIO.EXE.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="4" Row="0" DesktopApplicationID="Microsoft.Office.POWERPNT.EXE.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="1" DesktopApplicationID="Microsoft.Office.lync.exe.15" />
+          <start:DesktopApplicationTile Size="1x1" Column="1" Row="1" DesktopApplicationID="{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\KeePass Password Safe 2\KeePass.exe" />
+        </start:Group>
+        <start:Group xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Name="Media">
+          <start:DesktopApplicationTile Size="1x1" Column="0" Row="0" DesktopApplicationID="{6D809377-6AF0-444B-8957-A3773F02200E}\VideoLAN\VLC\vlc.exe" />
+          <start:DesktopApplicationTile Size="1x1" Column="1" Row="0" DesktopApplicationID="{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\AIMP3\AIMP.exe" />
+        </start:Group>
+        <start:Group xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Name="Weather">
+          <start:Tile Size="4x4" Column="0" Row="0" AppUserModelID="Microsoft.BingWeather_8wekyb3d8bbwe!App" />
+        </start:Group>
+      </defaultlayout:StartLayout>
+    </StartLayoutCollection>
+  </DefaultLayoutOverride>
+</LayoutModificationTemplate>

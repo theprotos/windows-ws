@@ -1,0 +1,11 @@
+@echo off
+title Updating Apps
+echo %stringStyle% Upgrade all %stringStyle%
+choco upgrade all -y -r
+cls
+@echo off
+echo.
+echo.
+echo Closing in 15 seconds..
+ping 127.0.0.1 -w 1000 -n 15 > nul 2>&1
+exit

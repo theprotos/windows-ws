@@ -1,0 +1,37 @@
+<!--suppress XmlUnboundNsPrefix -->
+<Configuration>
+    <Add OfficeClientEdition="64">
+        <Product ID="ProplusRetail">
+            <Language ID="en-US"/>
+            <Language ID="ru-RU"/>
+            <Language ID="uk-UA"/>
+            <Language ID="cz-CZ"/>
+            <Language ID="de-DE"/>
+            <Language ID="fr-FR"/>
+            <ExcludeApp ID="Access"/>
+            <ExcludeApp ID="Publisher"/>
+            <ExcludeApp ID="Groove"/>
+        </Product>
+        <Product ID="ProjectProRetail">
+            <Language ID="en-US"/>
+            <Language ID="ru-RU"/>
+            <Language ID="uk-UA"/>
+            <Language ID="cz-CZ"/>
+            <Language ID="de-DE"/>
+            <Language ID="fr-FR"/>
+        </Product>
+        <Product ID="VisioProRetail">
+            <Language ID="en-US"/>
+            <Language ID="ru-RU"/>
+            <Language ID="uk-UA"/>
+            <Language ID="cz-CZ"/>
+            <Language ID="de-DE"/>
+            <Language ID="fr-FR"/>
+        </Product>
+    </Add>
+    <Display Level="Full" AcceptEULA="TRUE"/>
+</Configuration>
+        <!--  OInstallSetting Branch=1  -->
+        <!--  OInstallSetting Office=0  -->
+        <!--  OInstallSetting Arch=2  -->
+        <!--  OInstallSetting Lang=1  -->
