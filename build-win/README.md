@@ -29,11 +29,11 @@ No need. Just copy the directory with scripts.
 ## Directory structure:
 
 * parent_dir
-    * [bin](bin/README.md)
-    * [config](config/README.md)
-    * laptop
-    * log
-    * physical
+    * [bin](build-win/bin/README.md) ([web link](bin))
+    * [cleanup-updates](build-win/cleanup-updates/README.md) ([web link](cleanup-updates))
+    * [config](build-win/config/README.md) ([web link](config))
+    * [laptop](build-win/laptop/README.md) ([web link](laptop))
+    * [physical](build-win/physical/README.md) ([web link](physical))
     * scripts
     * vm
 
@@ -55,6 +55,3 @@ TODO: Write credits
 ## License
 
 The project is licensed under the **GPL3 license**.  
-
-
-Get-AppxPackage *xboxapp* | Remove-AppxPackage
