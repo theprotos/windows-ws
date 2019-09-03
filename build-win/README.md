@@ -10,7 +10,7 @@ Features:
 * Add RU|UA|ENG lanaguages
 * Show hidden files and known extensions
 * Add timezone and change time format
-* Set UNC path in cmd ?
+* Set UNC path in cmd
 * Show all apps in system tray
 * Disable visual style
 * Enable Login Screen Background Image
@@ -25,11 +25,12 @@ Features:
 ## Installation/Setup
 No need. Just copy the directory with scripts.
 
-Directory structure:
+
+## Directory structure:
 
 * parent_dir
-    * bin
-    * config
+    * [bin](bin/README.md)
+    * [config](config/README.md)
     * laptop
     * log
     * physical
