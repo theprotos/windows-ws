@@ -1,8 +1,9 @@
-# Project Description
+# [DEPECATED] windows-ws
 
-Simple app deployment&config script
+!!! replaced by  [Cookbooks-Generic](https://github.com/theprotos/cookbooks-generic.git) !!!   
+Simple app deployment&config script for windows
   
-Features:
+## Features:
 
 * Add scheduled task for app update
 * Add trusted sites to java

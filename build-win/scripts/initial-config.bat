@@ -186,16 +186,19 @@ echo.
 @echo %stringStyle% Notify before download updates %stringStyle%
 @reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate\AU"    /v  "AUOptions"        /T REG_DWORD /F /D 2
 echo.
+
 @echo %stringStyle% Disable location %stringStyle%
 @reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}"    /v  "Value"        /T REG_SZ /F /D "Deny"
 @reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{E6AD100E-5F4E-44CD-BE0F-2265D88D14F5}"    /v  "Value"        /T REG_SZ /F /D "Deny"
 @reg add "HKCU\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Permissions\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}"  /v  "SensorPermissionState"        /T REG_DWORD /F /D 0
 echo.
+
 @echo %stringStyle% Disable Defender %stringStyle%
 @reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender"                           /v  "DisableAntiSpyware"                /T REG_DWORD /F /D 1
 @reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection"      /v  "DisableRealtimeMonitoring"         /T REG_DWORD /F /D 1
 @reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Systray"   /v  "HideSystray"                       /T REG_DWORD /F /D 1
 echo.
+
 title %titleName% 22/24 [######################--]
 @echo %stringStyle% Never ask for feedback %stringStyle%
 @reg add "HKCU\SOFTWARE\Microsoft\Siuf\Rules" /v  "NumberOfSIUFInPeriod"        /T REG_DWORD /F /D 0
@@ -206,13 +209,20 @@ echo.
 @reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search"         /v "SearchboxTaskbarMode"   /t REG_DWORD /d 0 /f
 @reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search"         /v "BingSearchEnabled"      /t REG_DWORD /d 0 /f
 echo.
+
 @echo %stringStyle% Disabling OneDrive %stringStyle%
 @reg add "HKLM\Software\Policies\Microsoft\Windows\OneDrive"                            /f /t REG_DWORD     /v DisableFileSyncNGSC  /d 1
 @reg add "HKLM\Software\Policies\Microsoft\Windows\OneDrive"                            /f /t REG_DWORD     /v DisableFileSync      /d 1
 @reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run"  /f /t REG_BINARY    /v OneDrive             /d 0300000021B9DEB396D7D001
+
 echo.
 @echo %stringStyle% half-open TCP connections limit %stringStyle%
 @reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters"        /f /t REG_DWORD     /v EnableConnectionRateLimiting  /d 0
+echo.
+@echo %stringStyle% half-open TCP connections limit %stringStyle%
+@reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GameDVR" /f /t REG_DWORD /v AllowgameDVR /d 0
+@reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GameDVR" /f /t REG_DWORD /v AppCaptureEnabled /d 0
+@reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GameDVR" /f /t REG_DWORD /v HistoricalCaptureEnabled  /d 0
 echo.
 @echo %stringStyle% disable useless services %stringStyle%
 sc config "lfsvc"           start= disabled

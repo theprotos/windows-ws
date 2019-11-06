@@ -33,10 +33,6 @@ echo Started > %SYSTEMDRIVE%\temp\choco-install%dateTimeFile%.log
 set installParam=-y -r --ignore-checksum
 title %titleName% [#------------]
 echo %stringStyle% Windows Ecosystem %stringStyle%
-choco install %installParam% chocolatey
-choco install %installParam% chocolatey-core.extension
-choco install %installParam% powershell
-choco install %installParam% powershell -pre
 choco install %installParam% chocolateygui
 choco install %installParam% dotnet4.5
 choco install %installParam% dotnet3.5
@@ -47,9 +43,9 @@ cls
 title %titleName% [###---------]
 echo %stringStyle% Browsers %stringStyle%
 choco install %installParam% firefox
-choco install %installParam% google-chrome-x64
+choco install %installParam% googlechrome
 choco install %installParam% tor-browser
-choco uninstall %installParam% opera
+::# choco uninstall %installParam% opera
 cls
 title %titleName% [####---------]
 ::#########################################
@@ -74,12 +70,12 @@ if [%2] EQU [dev] (
     choco install %installParam% insted
     choco install %installParam% wireshark
     choco install %installParam% fiddler
+    choco install %installParam% ilspy
     cls
     title %titleName% [#####--------]
     echo %stringStyle% D-VCS %stringStyle%
     choco install %installParam% git.install
     choco install %installParam% hg
-    choco uninstall %installParam% githubforwindows
     choco install %installParam% cygwin
     choco install %installParam% cmder
     choco install %installParam% console2
@@ -94,13 +90,13 @@ if [%2] EQU [dev] (
     cls
     title %titleName% [#####--------]
     echo %stringStyle% DevOps %stringStyle%
-    choco uninstall %installParam% docker
-    choco uninstall %installParam% docker-machine
+    ::# choco uninstall %installParam% docker
+    ::# choco uninstall %installParam% docker-machine
     choco uninstall %installParam% kubernetes-cli
     choco install %installParam% vagrant
     choco install %installParam% packer
-    choco uninstall %installParam% minikube
-    choco uninstall %installParam% minishift
+    ::# choco uninstall %installParam% minikube
+    ::# choco uninstall %installParam% minishift
     choco install %installParam% terraform
 )
 cls
@@ -125,11 +121,7 @@ choco install %installParam% hwinfo.install
 cls
 title %titleName% [#######------]
 echo %stringStyle% Adobe software %stringStyle%
-choco uninstall %installParam% flashplayerplugin
 choco install %installParam% flashplayerplugin
-choco install %installParam% adobereader
-choco uninstall %installParam% adobeshockwaveplayer
-choco uninstall %installParam% adobeair
 cls
 title %titleName% [########-----]
 echo %stringStyle% Media tools %stringStyle%
@@ -153,7 +145,6 @@ cls
 title %titleName% [##########---]
 echo %stringStyle% Network %stringStyle%
 choco install %installParam% teamviewer
-choco uninstall %installParam% viber
 if [%2] NEQ [minimal] (
     choco install %installParam% keepass.install
     choco install %installParam% uget
@@ -179,7 +170,7 @@ if [%1] EQU [vm] (
 ) else (
     choco install %installParam% skype
     if [%2] NEQ [minimal] (
-        choco install %installParam% dropbox
+        choco uninstall %installParam% dropbox
         choco install %installParam% google-backup-and-sync
         choco install %installParam% virtualbox
         choco install %installParam% virtualbox.extensionpack
